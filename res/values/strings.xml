@@ -3,5 +3,8 @@
 
     <string name="hello">Hello World!</string>
     <string name="app_name">Radio-T</string>
+    <string name="openMediaPlayer">Open Media Player</string>
+    <string name="openTwitterFeed">Open Twitter Feed</string>
+    <string name="openJabberChat">Open Jabber Chat</string>
 
 </resources>

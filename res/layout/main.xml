@@ -9,4 +9,22 @@
         android:layout_height="wrap_content"
         android:text="@string/hello" />
 
+    <Button
+        android:id="@+id/openMediaPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/openMediaPlayer" />
+
+    <Button
+        android:id="@+id/openTwitterFeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/openTwitterFeed" />
+
+    <Button
+        android:id="@+id/openJabberChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/openJabberChat" />
+
 </LinearLayout>
