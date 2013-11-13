@@ -2,6 +2,10 @@ package ru.qzenn.radiot;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MediaPlayer extends Activity {
@@ -10,5 +14,14 @@ public class MediaPlayer extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mediaplayer);
+        EditText urlEditText = (EditText)findViewById(R.id.urlEditText);
+        Button playStopButton = (Button)findViewById(R.id.playStopButton);
+        playStopButton.setOnClickListener(playStopButtonHandler);
     }
+    
+    private OnClickListener playStopButtonHandler = new OnClickListener(){
+        public void onClick(View v){
+            //
+        }
+    };
 }

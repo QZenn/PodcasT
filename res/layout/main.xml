@@ -13,18 +13,18 @@
         android:id="@+id/openMediaPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/openMediaPlayer" />
+        android:text="@string/openMediaPlayerButton" />
 
     <Button
         android:id="@+id/openTwitterFeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/openTwitterFeed" />
+        android:text="@string/openTwitterFeedButton" />
 
     <Button
         android:id="@+id/openJabberChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/openJabberChat" />
+        android:text="@string/openJabberChatButton" />
 
 </LinearLayout>

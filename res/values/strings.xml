@@ -3,8 +3,10 @@
 
     <string name="hello">Hello World!</string>
     <string name="app_name">Radio-T</string>
-    <string name="openMediaPlayer">Open Media Player</string>
-    <string name="openTwitterFeed">Open Twitter Feed</string>
-    <string name="openJabberChat">Open Jabber Chat</string>
+    <string name="openMediaPlayerButton">Open Media Player</string>
+    <string name="openTwitterFeedButton">Open Twitter Feed</string>
+    <string name="openJabberChatButton">Open Jabber Chat</string>
+    <string name="defaultUrl">http://217.20.164.163:8006/</string>
+    <string name="playStopButton">Play / Stop</string>
 
 </resources>
