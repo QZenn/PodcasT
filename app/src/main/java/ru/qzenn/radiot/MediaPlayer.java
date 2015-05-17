@@ -9,19 +9,21 @@ import android.widget.EditText;
 
 
 public class MediaPlayer extends Activity {
-    /** Called when the activity is first created. */
+    private OnClickListener playStopButtonHandler = new OnClickListener() {
+        public void onClick(View v) {
+            //
+        }
+    };
+
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mediaplayer);
-        EditText urlEditText = (EditText)findViewById(R.id.urlEditText);
-        Button playStopButton = (Button)findViewById(R.id.playStopButton);
+        EditText urlEditText = (EditText) findViewById(R.id.urlEditText);
+        Button playStopButton = (Button) findViewById(R.id.playStopButton);
         playStopButton.setOnClickListener(playStopButtonHandler);
     }
-    
-    private OnClickListener playStopButtonHandler = new OnClickListener(){
-        public void onClick(View v){
-            //
-        }
-    };
 }

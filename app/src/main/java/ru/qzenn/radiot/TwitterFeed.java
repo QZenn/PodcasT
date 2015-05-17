@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
-public class JabberChat extends Activity {
-    /** Called when the activity is first created. */
+public class TwitterFeed extends Activity {
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.jabberchat);
+        setContentView(R.layout.twitterfeed);
     }
 }
