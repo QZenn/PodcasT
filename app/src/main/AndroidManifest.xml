@@ -19,6 +19,7 @@
         </activity>
         <activity android:name="MediaPlayer"></activity>
         <activity android:name="TwitterFeed"></activity>
+        <activity android:name="JabberChat"></activity>
     </application>
 
 </manifest>

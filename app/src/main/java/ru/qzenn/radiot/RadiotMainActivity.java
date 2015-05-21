@@ -11,7 +11,7 @@ public class RadiotMainActivity extends Activity {
     private OnClickListener startMediaPlayerActivity = new OnClickListener() {
 
         public void onClick(View v) {
-            Intent intent = new Intent(RadiotMainActivity.this,
+            Intent intent = new Intent(getApplicationContext(),
                     MediaPlayer.class);
             startActivity(intent);
         }
@@ -20,7 +20,7 @@ public class RadiotMainActivity extends Activity {
     private OnClickListener startTwitterFeedActivity = new OnClickListener() {
 
         public void onClick(View v) {
-            Intent intent = new Intent(RadiotMainActivity.this,
+            Intent intent = new Intent(getApplication(),
                     TwitterFeed.class);
             startActivity(intent);
         }
@@ -29,7 +29,7 @@ public class RadiotMainActivity extends Activity {
     private OnClickListener startJabberChatActivity = new OnClickListener() {
 
         public void onClick(View v) {
-            Intent intent = new Intent(RadiotMainActivity.this,
+            Intent intent = new Intent(getApplication(),
                     JabberChat.class);
             startActivity(intent);
         }
