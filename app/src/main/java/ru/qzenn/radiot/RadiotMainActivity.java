@@ -45,9 +45,12 @@ public class RadiotMainActivity extends Activity {
         setContentView(R.layout.main);
         Button openMediaPlayerButton = (Button) findViewById(R.id.openMediaPlayer);
         openMediaPlayerButton.setOnClickListener(startMediaPlayerActivity);
+        openMediaPlayerButton.setContentDescription(getApplication().getString(R.string.openMediaPlayerButton));
+        openMediaPlayerButton.setTag(getApplication().getString(R.string.openMediaPlayerButton));
         Button openTwitterFeedButton = (Button) findViewById(R.id.openTwitterFeed);
         openTwitterFeedButton.setOnClickListener(startTwitterFeedActivity);
         Button openJabberChatButton = (Button) findViewById(R.id.openJabberChat);
         openJabberChatButton.setOnClickListener(startJabberChatActivity);
+        openJabberChatButton.setContentDescription(getApplication().getString(R.string.openJabberChatButton));
     }
 }

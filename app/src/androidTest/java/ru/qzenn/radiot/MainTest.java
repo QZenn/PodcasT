@@ -1,5 +1,6 @@
 package ru.qzenn.radiot;
 
+import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
@@ -14,11 +15,13 @@ import static android.support.test.espresso.action.ViewActions.pressBack;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isRoot;
+import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withTagValue;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.is;
 
-/**
- * Created by QZen on 22/05/15.
- */
+
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class MainTest {
@@ -30,6 +33,18 @@ public class MainTest {
     public void firstTest() {
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
         onView(isRoot()).perform(pressBack());
+
+        onView(withId(R.id.openTwitterFeed)).perform(click());
+        onView(isRoot()).perform(pressBack());
+
+        onView(withContentDescription(is(mActivityRule.getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
+        onView(isRoot()).perform(pressBack());
+
+        onView(withTagValue(is((Object)
+                mActivityRule.getActivity().getString(R.string.openMediaPlayerButton))))
+                .perform(click());
+        Espresso.pressBack();
+
         onView(withText(R.string.openMediaPlayerButton)).check(matches(isDisplayed()));
     }
 }
