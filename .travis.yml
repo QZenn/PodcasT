@@ -1,8 +1,5 @@
 language: android
 jdk: oraclejdk7
-env:
-  matrix:
-    - ANDROID_TARGET=android-21  ANDROID_ABI=armeabi-v7a
 
 android:
   components:
@@ -18,21 +15,7 @@ android:
     - android-21
 
     # Additional components
-    - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - addon-google_apis-google-21
 
-    # Specify at least one system image,
-    # if you need to run emulator(s) during your tests
-    - sys-img-armeabi-v7a-android-21
-
-before_install:
-  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
-  - emulator -avd test -no-skin -no-audio -no-window &
-
-before_script:
-  - adb wait-for-device
-  - adb shell input keyevent 82 &
-
-script: ./gradlew build connectedCheck
+script: ./gradlew build
