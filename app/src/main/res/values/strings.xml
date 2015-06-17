@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World!</string>
-    <string name="app_name">Radio-T</string>
+    <string name="app_name">Podcas-T</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
     <string name="openMediaPlayerButton">Open Media Player</string>
     <string name="openTwitterFeedButton">Open Twitter Feed</string>
     <string name="openJabberChatButton">Open Jabber Chat</string>
     <string name="defaultUrl">http://217.20.164.163:8006/</string>
     <string name="playStopButton">Play / Stop</string>
-
+    <string name="title_activity_act_player">ActPlayer</string>
+    <string name="title_activity_act_twitter">ActTwitter</string>
+    <string name="title_activity_act_jabber">ActJabber</string>
 </resources>
