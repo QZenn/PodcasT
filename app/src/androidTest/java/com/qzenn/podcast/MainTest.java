@@ -5,6 +5,8 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import com.squareup.spoon.Spoon;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,10 +33,14 @@ public class MainTest {
 
     @Test
     public void firstTest() {
+        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
+        Spoon.screenshot(mActivityRule.getActivity(), "Media_Player");
         onView(isRoot()).perform(pressBack());
+        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
 
         onView(withId(R.id.openTwitterFeed)).perform(click());
+        Spoon.screenshot(mActivityRule.getActivity(), "Twitter_Feed");
         onView(isRoot()).perform(pressBack());
 
         onView(withContentDescription(is(mActivityRule.getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
@@ -46,6 +52,5 @@ public class MainTest {
         Espresso.pressBack();
 
         onView(withText(R.string.openMediaPlayerButton)).check(matches(isDisplayed()));
-
     }
 }
