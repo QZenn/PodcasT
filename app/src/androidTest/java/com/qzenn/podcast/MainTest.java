@@ -33,15 +33,15 @@ public class MainTest {
 
     @Test
     public void firstTest() {
-        Solo solo = new Solo(mActivityRule.instrumentation(), mActivityRule.getActivity());
-        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
+//        Solo solo = new Solo(mActivityRule.instrumentation(), mActivityRule.getActivity());
+//        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
-        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
+//        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
         onView(isRoot()).perform(pressBack());
-        Spoon.screenshot(solo.getCurrentActivity(), "Main_Screen");
+//        Spoon.screenshot(solo.getCurrentActivity(), "Main_Screen");
 
         onView(withId(R.id.openTwitterFeed)).perform(click());
-        Spoon.screenshot(solo.getCurrentActivity(), "Twitter_Feed");
+//        Spoon.screenshot(solo.getCurrentActivity(), "Twitter_Feed");
         onView(isRoot()).perform(pressBack());
 
         onView(withContentDescription(is(mActivityRule.getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
