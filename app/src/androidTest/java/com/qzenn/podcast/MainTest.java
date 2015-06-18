@@ -33,24 +33,25 @@ public class MainTest {
 
     @Test
     public void firstTest() {
-//        Solo solo = new Solo(mActivityRule.instrumentation(), mActivityRule.getActivity());
+        Solo solo = new Solo(mActivityRule.instrumentation(), mActivityRule.getActivity());
+        solo.unlockScreen();
 //        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
 //        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
-        pressBack();
+        onView(isRoot()).perform(pressBack());
 //        Spoon.screenshot(solo.getCurrentActivity(), "Main_Screen");
 
         onView(withId(R.id.openTwitterFeed)).perform(click());
 //        Spoon.screenshot(solo.getCurrentActivity(), "Twitter_Feed");
-        pressBack();
+        onView(isRoot()).perform(pressBack());
 
         onView(withContentDescription(is(mActivityRule.getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
-        pressBack();
+        onView(isRoot()).perform(pressBack());
 
         onView(withTagValue(is((Object)
                 mActivityRule.getActivity().getString(R.string.openMediaPlayerButton))))
                 .perform(click());
-        pressBack();
+        Espresso.pressBack();
 
         onView(withText(R.string.openMediaPlayerButton)).check(matches(isDisplayed()));
     }
