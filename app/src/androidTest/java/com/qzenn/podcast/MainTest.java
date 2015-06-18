@@ -37,7 +37,7 @@ public class MainTest {
         solo.unlockScreen();
 //        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
-//        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
+        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
         onView(isRoot()).perform(pressBack());
 //        Spoon.screenshot(solo.getCurrentActivity(), "Main_Screen");
 
