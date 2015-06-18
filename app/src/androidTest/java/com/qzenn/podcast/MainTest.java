@@ -37,20 +37,20 @@ public class MainTest {
 //        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
 //        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
-        onView(isRoot()).perform(pressBack());
+        pressBack();
 //        Spoon.screenshot(solo.getCurrentActivity(), "Main_Screen");
 
         onView(withId(R.id.openTwitterFeed)).perform(click());
 //        Spoon.screenshot(solo.getCurrentActivity(), "Twitter_Feed");
-        onView(isRoot()).perform(pressBack());
+        pressBack();
 
         onView(withContentDescription(is(mActivityRule.getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
-        onView(isRoot()).perform(pressBack());
+        pressBack();
 
         onView(withTagValue(is((Object)
                 mActivityRule.getActivity().getString(R.string.openMediaPlayerButton))))
                 .perform(click());
-        Espresso.pressBack();
+        pressBack();
 
         onView(withText(R.string.openMediaPlayerButton)).check(matches(isDisplayed()));
     }
