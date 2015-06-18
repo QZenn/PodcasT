@@ -35,22 +35,25 @@ public class MainTest {
     public void firstTest() {
         Solo solo = new Solo(mActivityRule.instrumentation(), mActivityRule.getActivity());
         solo.unlockScreen();
-//        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
+        Spoon.screenshot(solo.getCurrentActivity(), solo.getCurrentActivity().getLocalClassName());
+        solo.waitForText(solo.getString(R.string.openMediaPlayerButton));
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
-        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
+        Spoon.screenshot(solo.getCurrentActivity(), solo.getCurrentActivity().getLocalClassName());
         onView(isRoot()).perform(pressBack());
-//        Spoon.screenshot(solo.getCurrentActivity(), "Main_Screen");
+        Spoon.screenshot(solo.getCurrentActivity(), solo.getCurrentActivity().getLocalClassName());
 
         onView(withId(R.id.openTwitterFeed)).perform(click());
-//        Spoon.screenshot(solo.getCurrentActivity(), "Twitter_Feed");
+        Spoon.screenshot(solo.getCurrentActivity(), solo.getCurrentActivity().getLocalClassName());
         onView(isRoot()).perform(pressBack());
 
         onView(withContentDescription(is(mActivityRule.getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
+        Spoon.screenshot(solo.getCurrentActivity(), solo.getCurrentActivity().getLocalClassName());
         onView(isRoot()).perform(pressBack());
-
+        Spoon.screenshot(solo.getCurrentActivity(), solo.getCurrentActivity().getLocalClassName());
         onView(withTagValue(is((Object)
                 mActivityRule.getActivity().getString(R.string.openMediaPlayerButton))))
                 .perform(click());
+        Spoon.screenshot(solo.getCurrentActivity(), solo.getCurrentActivity().getLocalClassName());
         Espresso.pressBack();
 
         onView(withText(R.string.openMediaPlayerButton)).check(matches(isDisplayed()));
