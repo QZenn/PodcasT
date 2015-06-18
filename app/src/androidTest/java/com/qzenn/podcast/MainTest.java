@@ -1,10 +1,10 @@
 package com.qzenn.podcast;
 
 import android.support.test.espresso.Espresso;
-import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
+import com.robotium.solo.Solo;
 import com.squareup.spoon.Spoon;
 
 import org.junit.Rule;
@@ -29,18 +29,19 @@ import static org.hamcrest.Matchers.is;
 public class MainTest {
 
     @Rule
-    public ActivityTestRule<ActMain> mActivityRule = new ActivityTestRule(ActMain.class);
+    public ActivityRule<ActMain> mActivityRule = new ActivityRule(ActMain.class);
 
     @Test
     public void firstTest() {
+        Solo solo = new Solo(mActivityRule.instrumentation(), mActivityRule.getActivity());
         Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
-        Spoon.screenshot(mActivityRule.getActivity(), "Media_Player");
+        Spoon.screenshot(solo.getCurrentActivity(), "Media_Player");
         onView(isRoot()).perform(pressBack());
-        Spoon.screenshot(mActivityRule.getActivity(), "Main_Screen");
+        Spoon.screenshot(solo.getCurrentActivity(), "Main_Screen");
 
         onView(withId(R.id.openTwitterFeed)).perform(click());
-        Spoon.screenshot(mActivityRule.getActivity(), "Twitter_Feed");
+        Spoon.screenshot(solo.getCurrentActivity(), "Twitter_Feed");
         onView(isRoot()).perform(pressBack());
 
         onView(withContentDescription(is(mActivityRule.getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
