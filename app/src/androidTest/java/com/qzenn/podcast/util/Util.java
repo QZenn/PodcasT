@@ -60,7 +60,7 @@ public class Util extends ScreenBase {
     }
 
     public static void takeScreenshot(String title) {
-        if (notEmulator()) {
+        if (true) {
             Spoon.screenshot(getSolo().getCurrentActivity(), title);
         }
     }
