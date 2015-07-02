@@ -18,14 +18,16 @@ public class Util extends ScreenBase {
     private static final String LOG_TAG = Property.LOG_TAG;
 
     public static void log(final String message) {
-        getMain().getActivity().runOnUiThread(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        Log.i(LOG_TAG, message);
+        if (Property.LOGGING) {
+            getMain().getActivity().runOnUiThread(
+                    new Runnable() {
+                        @Override
+                        public void run() {
+                            Log.i(LOG_TAG, message);
+                        }
                     }
-                }
-        );
+            );
+        }
     }
 
     public static void toast(final String message) {
@@ -68,6 +70,7 @@ public class Util extends ScreenBase {
     }
 
     public static void back() {
+        Util.log("back");
         onView(isRoot()).perform(pressBack());
         takeScreenshot();
     }

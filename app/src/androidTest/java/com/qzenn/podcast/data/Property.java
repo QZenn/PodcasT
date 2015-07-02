@@ -7,8 +7,9 @@ import java.io.InputStream;
 public class Property {
 
     public static final String LOG_TAG;
+    public static final Boolean LOGGING;
 
-    private static final String TEST_PROPERTIES_FILE = "test.properties";
+    private static final String TEST_PROPERTIES_FILE = "/test.properties";
     private static final java.util.Properties TEST_PROPERTIES = new java.util.Properties();
 
     static {
@@ -25,6 +26,7 @@ public class Property {
         }
 
         LOG_TAG = get("LOG_TAG");
+        LOGGING = Boolean.getBoolean(get("LOGGING"));
     }
 
     private Property() {

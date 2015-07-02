@@ -22,21 +22,25 @@ public class ScrMain extends ScreenBase {
     }
 
     public static void openPlayer() {
+        Util.log("Open Player");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
         Util.takeScreenshot();
     }
 
     public static void openChat() {
+        Util.log("Open Chat");
         onView(withContentDescription(is(getMain().getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
         Util.takeScreenshot();
     }
 
     public static void openTwitter() {
+        Util.log("Open Twitter");
         onView(withId(R.id.openTwitterFeed)).perform(click());
         Util.takeScreenshot();
     }
 
     public static ScrPlayer openPlayerViaTagObject() {
+        Util.log("Open Player2");
         onView(withTagValue(is((Object)
                 getSolo().getCurrentActivity().getString(R.string.openMediaPlayerButton))))
                 .perform(click());
