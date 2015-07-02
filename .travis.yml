@@ -16,12 +16,12 @@ android:
 # Emulator Management: Create, Start and Wait
 before_script:
   - mksdcard -l SDCARD 64M card.img
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
   - emulator -avd test -sdcard card.img -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
 
-script: ./gradlew connectedAndroidTest --stacktrace
+script: ./gradlew spoon --stacktrace
 
 notifications:
   email: false
