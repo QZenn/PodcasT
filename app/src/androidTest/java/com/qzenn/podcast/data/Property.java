@@ -26,7 +26,7 @@ public class Property {
         }
 
         LOG_TAG = get("LOG_TAG");
-        LOGGING = Boolean.getBoolean(get("LOGGING"));
+        LOGGING = !"LOGGING".equalsIgnoreCase("false");
     }
 
     private Property() {

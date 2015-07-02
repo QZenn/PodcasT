@@ -10,4 +10,5 @@
     <string name="title_activity_act_player">ActPlayer</string>
     <string name="title_activity_act_twitter">ActTwitter</string>
     <string name="title_activity_act_jabber">ActJabber</string>
+    <string name="edit_blank">blank</string>
 </resources>
