@@ -19,24 +19,25 @@ public class ScrMain extends ScreenBase {
     public ScrMain() {
         getSolo().waitForText(getSolo().getString(R.string.openMediaPlayerButton));
         onView(withText(R.string.openMediaPlayerButton)).check(matches(isDisplayed()));
+        Util.takeScreenshot();
     }
 
-    public static void openPlayer() {
+    public static ScrPlayer openPlayer() {
         Util.log("Open Player");
         onView(withText(R.string.openMediaPlayerButton)).perform(click());
-        Util.takeScreenshot();
+        return new ScrPlayer();
     }
 
-    public static void openChat() {
+    public static ScrChat openChat() {
         Util.log("Open Chat");
         onView(withContentDescription(is(getMain().getActivity().getApplication().getString(R.string.openJabberChatButton)))).perform(click());
-        Util.takeScreenshot();
+        return new ScrChat();
     }
 
-    public static void openTwitter() {
+    public static ScrTwitter openTwitter() {
         Util.log("Open Twitter");
         onView(withId(R.id.openTwitterFeed)).perform(click());
-        Util.takeScreenshot();
+        return new ScrTwitter();
     }
 
     public static ScrPlayer openPlayerViaTagObject() {
@@ -44,7 +45,6 @@ public class ScrMain extends ScreenBase {
         onView(withTagValue(is((Object)
                 getSolo().getCurrentActivity().getString(R.string.openMediaPlayerButton))))
                 .perform(click());
-        Util.takeScreenshot();
         return new ScrPlayer();
     }
 }

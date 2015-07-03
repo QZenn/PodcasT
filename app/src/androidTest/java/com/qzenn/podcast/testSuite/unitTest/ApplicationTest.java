@@ -1,4 +1,4 @@
-package com.qzenn.podcast;
+package com.qzenn.podcast.testSuite.unitTest;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

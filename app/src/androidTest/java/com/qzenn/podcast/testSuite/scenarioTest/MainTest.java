@@ -1,4 +1,4 @@
-package com.qzenn.podcast.suite;
+package com.qzenn.podcast.testSuite.scenarioTest;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,11 @@ import android.content.pm.ResolveInfo;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
 import android.test.suitebuilder.annotation.LargeTest;
-import android.view.InputEvent;
-import android.view.KeyEvent;
 
 import com.qzenn.podcast.R;
 import com.qzenn.podcast.screen.ScrMain;
@@ -65,25 +66,42 @@ public class MainTest extends ScreenBase {
         ScrMain.openPlayerViaTagObject();
         Util.back();
 
+        new ScrMain();
+    }
+
+    @Test
+    public void testResumeActivty() {
+        new ScrMain();
         onView(withId(R.id.editText)).perform(clearText(), typeText("reaaly?"));
         Util.takeScreenshot();
 
         Util.toast("I'll be back!");
 
-        new ScrMain();
-
         UiDevice mDevice;
+//        mDevice = UiDevice.getInstance(InstrumentationRegistry.getContext().getApplicationContext().startInstrumentation())
         mDevice = UiDevice.getInstance(getMain().getInstrumentation());
         mDevice.pressHome();
         mDevice.wait(Until.hasObject(By.pkg(getLauncherPackageName()).depth(0)), 5000);
 //        getMain().getInstrumentation().getContext().
 
         Util.toast("Do you hear me?");
+
+        try {
+            mDevice.findObject(new UiSelector().descriptionContains("Apps")).click();
+        } catch (UiObjectNotFoundException e) {
+            e.printStackTrace();
+        }
+//        if (appsButton.exists() && appsButton.isEnabled()) {
+//            appsButton.click();
+//        }
+
+
         // Launch the blueprint app
         Context context = InstrumentationRegistry.getContext();
         final Intent intent = context.getPackageManager()
                 .getLaunchIntentForPackage("com.qzenn.podcast");
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);    // Clear out any previous instances
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+// Intent.FLAG_ACTIVITY_CLEAR_TASK);    // Clear out any previous instances
         context.startActivity(intent);
         // Wait for the app to appear
         mDevice.wait(Until.hasObject(By.pkg("com.qzenn.podcast").depth(0)), 5000);
@@ -92,7 +110,7 @@ public class MainTest extends ScreenBase {
         Util.toast("I'm back!!!");
         ScrMain.openChat();
         Util.back();
-//        onView(withId(R.id.editText)).check(matches(withText("reaaly?")));
+        onView(withId(R.id.editText)).check(matches(withText("reaaly?")));
     }
 
     private String getLauncherPackageName() {

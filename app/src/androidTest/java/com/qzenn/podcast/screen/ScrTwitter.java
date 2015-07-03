@@ -9,9 +9,9 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
-public class ScrPlayer extends ScreenBase {
+public class ScrTwitter extends ScreenBase {
 
-    public ScrPlayer() {
+    public ScrTwitter() {
         onView(withText(R.string.hello_world)).check(matches(isDisplayed()));
         Util.takeScreenshot();
     }
