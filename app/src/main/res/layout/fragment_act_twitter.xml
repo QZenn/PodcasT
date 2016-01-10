@@ -7,6 +7,23 @@
     tools:context="com.qzenn.podcast.ActTwitterFragment">
 
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/twitterText"
+        android:layout_below="@+id/btnGetRss"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get RSS"
+        android:id="@+id/btnGetRss"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
