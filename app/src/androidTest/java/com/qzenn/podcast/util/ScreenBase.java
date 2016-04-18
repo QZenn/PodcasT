@@ -1,5 +1,7 @@
 package com.qzenn.podcast.util;
 
+import android.support.test.InstrumentationRegistry;
+
 import com.qzenn.podcast.ActMain;
 import com.robotium.solo.Solo;
 
@@ -20,7 +22,7 @@ public class ScreenBase {
     public static Solo getSolo() {
         synchronized (Solo.class) {
             if (solo == null) {
-                solo = new Solo(main.getInstrumentation(), main.getActivity());
+                solo = new Solo(InstrumentationRegistry.getInstrumentation(), main.getActivity());
             }
         }
         return solo;

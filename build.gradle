@@ -6,8 +6,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-        classpath ('com.stanfy.spoon:spoon-gradle-plugin:1.0.2'){
+        classpath 'com.android.tools.build:gradle:2.0.0'
+        classpath 'com.squareup.spoon:spoon-runner:1.2.1'
+        classpath ('com.stanfy.spoon:spoon-gradle-plugin:1.0.4'){
             exclude module: 'guava'
         }
 
